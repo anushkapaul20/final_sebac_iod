@@ -1,0 +1,26 @@
+SeBAC-IoD — Batch Authentication Sequence
+=========================================
+
+  User                     Control Server                 Drones (batch)
+   |                              |                              |
+   |  Enroll {IDu, UID}           |                              |
+   |----------------------------->|                              |
+   |  {PIDu, FIDs, Bu}            |                              |
+   |<-----------------------------|                              |
+   |                              |   Enroll {IDd,v,Cj,Rest}     |
+   |                              |<-----------------------------|
+   |                              |  {DIDj,Ksd,Kj,Ej,Wj,Nj}     |
+   |                              |----------------------------->|
+   |                              |                              |
+   |  mu1 {PIDu,M1,M2,M3,T1}      |                              |
+   |============================>>|                              |
+   |                              |  mu2 {Yj,M5,G2,G3,T2}        |
+   |                              |============================>>|
+   |                              |                              |
+   |              mu3 {M5,DIDj,Ij,Kj}  (one per drone)           |
+   |<<===========================================================|
+   |                              |                              |
+   |  Batch verify (random Vecj): (Sum dj sj).Q == Sum dj Rj +   |
+   |                               Sum (dj ej) Kj                 |
+   |  on success -> SKij per drone ; on failure -> divide&conquer |
+   |                              |                              |

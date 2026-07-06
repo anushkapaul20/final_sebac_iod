@@ -1,0 +1,27 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.env
+env/
+
+# Logs (keep directory, ignore log content)
+logs/protocol_log.txt
+
+# Benchmark output images (optional — remove these lines to include plots)
+benchmark_results/
+
+# Pytest cache
+.pytest_cache/
+.coverage
+
+# VS Code
+.vscode/
+
+# OS files
+Thumbs.db
+.DS_Store

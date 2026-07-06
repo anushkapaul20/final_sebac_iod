@@ -1,0 +1,26 @@
+SeBAC-IoD — System Architecture
+===============================
+
+                         +------------------------+
+                         |     Control Server     |
+                         |  (Registration / KGC)  |
+                         |  master key s, Ppub=sQ |
+                         +-----------+------------+
+                                     |
+              secure enrollment +    | publishes { E(Fp), Q, n, p, Ppub, H() }
+              batch authentication   |
+                 +-------------------+-------------------+
+                 |                   |                   |
+            +----+----+         +----+----+         +----+----+
+            | Drone D1 |        | Drone D2 |        | Drone Dn |
+            |  PUF, Kj |        |  PUF, Kj |        |  PUF, Kj |
+            +----+----+         +----+----+         +----+----+
+                 \                   |                   /
+                  \                  |                  /
+                   \                 |                 /
+                    +---------------------------------+
+                    |               User              |
+                    |  password-hash (no biometric)   |
+                    |  batch-verifies all drones at    |
+                    |  once; derives SKij per drone    |
+                    +---------------------------------+

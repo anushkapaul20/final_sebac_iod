@@ -1,0 +1,7 @@
+# SeBAC-IoD simulation dependencies
+# Python 3.9+ recommended.
+
+ecdsa==0.19.2      # ECC over NIST P-256 (key gen, point arithmetic, serialization)
+
+# Standard library only (no install needed): hashlib, secrets, hmac, logging,
+# dataclasses, typing, os, time.
